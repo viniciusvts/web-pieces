@@ -1,0 +1,40 @@
+.watch {
+  width: 500px;
+  height: 100px;
+  display: flex;
+  border: solid 5px #f56666;
+  border-radius: 10px;
+  padding: 25px 50px;
+}
+.watch .day, .watch .hour, .watch .min, .watch .sec {
+  width: 125px;
+  height: 100px;
+  color: #ad0000;
+  font-size: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+.watch .hour::before, .watch .min::before, .watch .sec::before {
+  content: ":";
+  position: absolute;
+  margin-left: -45.0000045px;
+}
+.watch .day::after, .watch .hour::after, .watch .min::after, .watch .sec::after {
+  display: block;
+  font-size: 30.000012px;
+  font-weight: normal;
+}
+.watch .day::after {
+  content: "Dias";
+}
+.watch .hour::after {
+  content: "Hrs";
+}
+.watch .min::after {
+  content: "Min";
+}
+.watch .sec::after {
+  content: "Seg";
+}
+
+/*# sourceMappingURL=style.css.map */
