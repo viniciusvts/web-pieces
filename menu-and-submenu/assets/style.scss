@@ -1,0 +1,131 @@
+$gray: #7a7a7a;
+$laranja: #ff3e1e;
+.menuandsub{
+    padding: 50px 0;
+    position: relative;
+}
+.menu{
+    padding: 0 40px;
+    @media (max-width: 992px) {
+        overflow-x: hidden;
+        flex-wrap: nowrap !important;
+        margin: 0 auto!important;
+        z-index: 2;
+        padding: 0;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+        position: relative;
+        width: 100%;
+    }
+    .item{
+        text-align: center;
+        border-bottom: solid 1px $gray;
+        cursor: pointer;
+        @media (max-width: 992px) {
+            border-bottom: none;
+        }
+        img{
+            margin-left: auto;
+            margin-right: auto;
+            &.ativo{
+                display: none;
+            }
+            &.inativo{
+                display: block;
+            }
+        }
+        &.active{
+            border-bottom: solid 2px $laranja;
+            @media (max-width: 992px) {
+                border-bottom: none;
+            }
+            img{
+                &.ativo{
+                    display: block;
+                }
+                &.inativo{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+.sub-menus{
+    width: fit-content;
+    margin: 20px auto !important;
+    @media (max-width: 992px) {
+        text-align: center;
+    }
+    .item{
+        cursor: pointer;
+        padding: 0 20px;
+        &:not(:first-child){
+            border-left: solid 1px $gray;
+            @media (max-width: 992px) {
+                border-left: none;
+            }
+        }
+        &.active{
+            color: $laranja;
+        }
+        p{
+            margin: 0;
+            white-space: nowrap;
+        }
+    }
+}
+.conteudo{
+    margin-top: 50px;
+    .text{
+        height: fit-content;
+        margin: auto 0;
+        @media (max-width: 992px) {
+            margin-top: 30px;
+        }
+    }
+    .img{
+        img{
+            width: 100%;
+        }
+    }
+    .row{
+        @media (max-width: 992px) {
+            flex-wrap: wrap-reverse;
+        }
+    }
+}
+
+/*mobile nav*/
+#left svg, #right svg{
+    position: absolute;
+    top: 70px;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px;
+}
+#right svg{
+    right: 0;
+    padding-right: 0;
+}
+#left svg{
+    left: 0;
+    transform: rotate(180deg);
+    padding-left: 0;
+}
+/*mobile dots */
+#dots{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.active{
+    background-color: #ff4024;
+}

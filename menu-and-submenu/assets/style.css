@@ -1,0 +1,147 @@
+.menuandsub {
+  padding: 50px 0;
+  position: relative;
+}
+
+.menu {
+  padding: 0 40px;
+}
+@media (max-width: 992px) {
+  .menu {
+    overflow-x: hidden;
+    flex-wrap: nowrap !important;
+    margin: 0 auto !important;
+    z-index: 2;
+    padding: 0;
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+    position: relative;
+    width: 100%;
+  }
+}
+.menu .item {
+  text-align: center;
+  border-bottom: solid 1px #7a7a7a;
+  cursor: pointer;
+}
+@media (max-width: 992px) {
+  .menu .item {
+    border-bottom: none;
+  }
+}
+.menu .item img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.menu .item img.ativo {
+  display: none;
+}
+.menu .item img.inativo {
+  display: block;
+}
+.menu .item.active {
+  border-bottom: solid 2px #ff3e1e;
+}
+@media (max-width: 992px) {
+  .menu .item.active {
+    border-bottom: none;
+  }
+}
+.menu .item.active img.ativo {
+  display: block;
+}
+.menu .item.active img.inativo {
+  display: none;
+}
+
+.sub-menus {
+  width: fit-content;
+  margin: 20px auto !important;
+}
+@media (max-width: 992px) {
+  .sub-menus {
+    text-align: center;
+  }
+}
+.sub-menus .item {
+  cursor: pointer;
+  padding: 0 20px;
+}
+.sub-menus .item:not(:first-child) {
+  border-left: solid 1px #7a7a7a;
+}
+@media (max-width: 992px) {
+  .sub-menus .item:not(:first-child) {
+    border-left: none;
+  }
+}
+.sub-menus .item.active {
+  color: #ff3e1e;
+}
+.sub-menus .item p {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.conteudo {
+  margin-top: 50px;
+}
+.conteudo .text {
+  height: fit-content;
+  margin: auto 0;
+}
+@media (max-width: 992px) {
+  .conteudo .text {
+    margin-top: 30px;
+  }
+}
+.conteudo .img img {
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .conteudo .row {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+/*mobile nav*/
+#left svg, #right svg {
+  position: absolute;
+  top: 70px;
+  height: 40px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+#right svg {
+  right: 0;
+  padding-right: 0;
+}
+
+#left svg {
+  left: 0;
+  transform: rotate(180deg);
+  padding-left: 0;
+}
+
+/*mobile dots */
+#dots {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: #ff4024;
+}
+
+/*# sourceMappingURL=style.css.map */
