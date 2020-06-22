@@ -1,0 +1,87 @@
+#stant-produtividade{
+    position: relative;
+    text-align: center;
+}
+#stant-produtividade .active p{
+    color: #ff4024;
+}
+
+#stant-produtividade img{
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (max-width: 992px){
+    #esq{
+        overflow-x: hidden;
+        flex-wrap: nowrap;
+        margin: 0 auto;
+        z-index: 2;
+        padding: 0;
+    }
+}
+#esq div, #dir div{
+    position: relative;
+    margin-top: 50px;
+    cursor: pointer;
+}
+/* mostra e esconde imagem ativa*/
+#esq img.ativo, #dir img.ativo{
+    display: none;
+}
+#esq .active img.ativo, #dir .active img.ativo, #esq img.inativo, #dir img.inativo{
+    display: block;
+}
+#esq .active img.inativo, #dir .active img.inativo{
+    display: none;
+}
+#esq svg, #dir svg{
+    position: absolute;
+    top: 23%;
+    height: 25px;
+    display: none;
+}
+#esq svg{
+    right: -5%;
+}
+#dir svg{
+    left: -5%;
+    transform: rotate(180deg);
+}
+@media (min-width: 992px){
+    #esq .active svg, #dir .active svg{
+        display: block;
+    }
+}
+/* imagem central */
+#center-content{
+    width: 100%;
+}
+/*mobile nav*/
+#left svg, #right svg{
+    position: absolute;
+    top: 70px;
+    height: 40px;
+    cursor: pointer;
+    padding: 10px;
+}
+#right svg{
+    right: 0;
+    padding-right: 0;
+}
+#left svg{
+    left: 0;
+    transform: rotate(180deg);
+    padding-left: 0;
+}
+/*mobile dots */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+.dot.active{
+    background-color: #ff4024;
+}
