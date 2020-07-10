@@ -94,22 +94,16 @@ $laranja: #ff3e1e;
     }
     .img{
         img{
-            width: 100%;
+            width: auto;
             max-height: 390px;
             position: relative;
             display: block;
             margin: 0 auto;
-            @media (min-width: 992px) {
-                width: auto;
-            }
         }
     }
     .row{
         @media (max-width: 992px) {
             flex-wrap: wrap-reverse;
-        }
-        &:nth-child(even){
-            flex-direction: row-reverse;
         }
     }
 }
