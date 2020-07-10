@@ -7,7 +7,7 @@ Atenção a estrutura do objeto retornado pela api do wordpress
 
 ## compile sass
 <code>
-sass --watch watch-countdown/assets/style.scss:watch-countdown/assets/style.css
+sass --watch assets/style.scss:assets/style.css
 </code>
 
 Enjoy!
