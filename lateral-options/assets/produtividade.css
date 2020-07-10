@@ -10,6 +10,15 @@
     margin-left: auto;
     margin-right: auto;
 }
+#title-content{
+    color: #3D3D3D;
+    font-size: 19px;
+    font-weight: 500;
+    font-family: "Muli", Sans-serif;
+    padding: 10px 0;
+    margin-bottom: 60px;
+    line-height: 1;
+}
 @media (max-width: 992px){
     #esq{
         overflow-x: hidden;

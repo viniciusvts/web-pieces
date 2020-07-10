@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     .then(res => res.json())
     .then(json => initProdutividade(json))
 })
-/** @author Vinicius de Santana @param {[]} json */
+/** @author Vinicius de Santana @param {[{}]} json */
 function initProdutividade (json) {
     //cria uma div para cada item e a adiciona ao dom,
     //retorna o array com a div anexada
@@ -12,7 +12,9 @@ function initProdutividade (json) {
     // ativa o primeiro item e seta imagem central
     allItens[0].div.classList.add('active')
     let centerContent = document.getElementById('center-content')
+    let titleContent = document.getElementById('title-content')
     centerContent.setAttribute('src', allItens[0].acf.funcoes[0].imagem_funcao.url)
+    titleContent.innerHTML = allItens[0].acf.descricao
     //adiciona o evento de click a todos
     //o evento não está em uma função separada pq perde a referência de allItens
     for (let i = 0; i < allItens.length; i++) {
@@ -21,8 +23,10 @@ function initProdutividade (json) {
             for (let j = 0; j < allItens.length; j++) {
                 allItens[j].div.classList.remove('active')
                 // na referencia a div do click, coloca a imagem no centro
+                // e o texto no h2
                 if (allItens[j].div.innerText == this.innerText){
                     centerContent.setAttribute('src', allItens[j].acf.funcoes[0].imagem_funcao.url)
+                    titleContent.innerHTML = allItens[j].acf.descricao
                 }
             }
             //ativa a div do click
@@ -34,7 +38,7 @@ function initProdutividade (json) {
         startMobileMenu(json.length)
     }
 }
-/** @author Vinicius de Santana @param {[]} json */
+/** @author Vinicius de Santana @param {[{}]} json */
 function createAllItens (json) {
     let esq = document.getElementById('esq')
     let dir = document.getElementById('dir')
