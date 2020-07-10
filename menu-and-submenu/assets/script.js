@@ -109,7 +109,7 @@ class MenuAndSub {
         for (const fc of data.acf.funcoes) {
             // cria a div do submenu
             let sub = document.createElement('div')
-            sub.classList.add('item', 'col')
+            sub.classList.add('item', 'col-md-auto')
             // cria o paragrafo e o adiciona a div
             let p = document.createElement('p')
             p.innerText = fc.nome_funcao
