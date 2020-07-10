@@ -21,7 +21,7 @@
 }
 .menu .item {
   text-align: center;
-  border-bottom: solid 1px #7a7a7a;
+  border-bottom: solid 1px #eaeaea;
   cursor: pointer;
 }
 @media (max-width: 992px) {
@@ -32,12 +32,18 @@
 .menu .item img {
   margin-left: auto;
   margin-right: auto;
+  height: 40px;
 }
 .menu .item img.ativo {
   display: none;
 }
 .menu .item img.inativo {
   display: block;
+}
+.menu .item p {
+  font-size: 17px;
+  line-height: 22px;
+  margin-top: 14px;
 }
 .menu .item.active {
   border-bottom: solid 2px #ff3e1e;
@@ -52,6 +58,9 @@
 }
 .menu .item.active img.inativo {
   display: none;
+}
+.menu .item.active p {
+  color: #ff4024;
 }
 
 .sub-menus {
@@ -68,7 +77,7 @@
   padding: 0 20px;
 }
 .sub-menus .item:not(:first-child) {
-  border-left: solid 1px #7a7a7a;
+  border-left: solid 1px #eaeaea;
 }
 @media (max-width: 992px) {
   .sub-menus .item:not(:first-child) {
@@ -96,7 +105,11 @@
   }
 }
 .conteudo .img img {
-  width: 100%;
+  width: auto;
+  max-height: 390px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
 }
 @media (max-width: 992px) {
   .conteudo .row {
