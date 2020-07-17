@@ -46,17 +46,26 @@ class MenuAndSub {
      * @param {[{}]} data
     */
     init (data) {
+        let isHashValid = false
         for (const dt of data) {
             let menuItem = {}
             menuItem.menu = this.createMenuItem(dt)
             // já monta o menu nesse loop
             this.el.menu.appendChild(menuItem.menu)
             menuItem.menu.sub = this.createSubmenuItens(dt)
+            // caso tenha hash e seja igual ao slug, ativa o menu e submenu
+            if (window.location.hash.substr(1) == dt.slug) {
+                isHashValid = true
+                menuItem.menu.classList.add('active')
+                this.setContent(menuItem.menu.sub)
+            }
             this.menuItens.push(menuItem)
         }
-        //ativa o primeiro menu
-        this.menuItens[0].menu.classList.add('active')
-        this.setContent(this.menuItens[0].menu.sub)
+        //caso não tenha o hash ativa o primeiro
+        if (!isHashValid) {
+            this.menuItens[0].menu.classList.add('active')
+            this.setContent(this.menuItens[0].menu.sub)
+        }
         
         //inicia as configurações de mobile
         if (window.innerWidth < 992) {
@@ -129,7 +138,6 @@ class MenuAndSub {
      * @param {{}} data
     */
     createContentItens(data){
-        console.log('data =>', data.nome_funcao)
         let content = document.createElement('div')
         content.classList.add('row')
         //cria o lado esquerdo com o texto e adiciona a div
