@@ -1,0 +1,87 @@
+.sobre-cards {
+  padding-top: 20px;
+  border-radius: 30px;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+@media (min-width: 1199) {
+  .sobre-cards {
+    box-shadow: 10px -10px 20px 0px #EFEFEF;
+  }
+}
+.sobre-cards .sobre-card {
+  border-right: 2px solid #F3F3F3;
+  text-align: center;
+}
+.sobre-cards .sobre-card:last-child {
+  border: none;
+}
+.sobre-cards .sobre-card .head img {
+  border: 1px solid #EFEFEF;
+  border-radius: 34px;
+  margin-bottom: 30px;
+}
+.sobre-cards .sobre-card .head p.name {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 26px;
+  color: #472876;
+  margin-bottom: 0;
+}
+.sobre-cards .sobre-card .head p.cargo {
+  font-size: 15px;
+  line-height: 26px;
+  color: #FFB044;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+.sobre-cards .sobre-card .text {
+  margin-bottom: 100px;
+}
+.sobre-cards .sobre-card .text * {
+  font-size: 15px;
+  line-height: 26px;
+  color: #141414;
+  margin-bottom: 25px;
+  padding: 0 25px;
+}
+.sobre-cards .sobre-card .foot {
+  bottom: 30px;
+  position: absolute;
+  left: 50%;
+}
+.sobre-cards .sobre-card .foot img {
+  transform: translateX(-50%);
+}
+.sobre-cards .rightArrow, .sobre-cards .leftArrow {
+  font-family: monospace;
+  font-size: 40px;
+  color: gray;
+  position: absolute;
+  top: 200px;
+  z-index: 1;
+  width: 40px;
+  cursor: pointer;
+}
+.sobre-cards .rightArrow.disabled, .sobre-cards .leftArrow.disabled {
+  color: #eee;
+}
+.sobre-cards .leftArrow {
+  left: 10px;
+}
+@media (min-width: 768px) {
+  .sobre-cards .leftArrow {
+    left: 70px;
+  }
+}
+.sobre-cards .rightArrow {
+  right: 0px;
+}
+@media (min-width: 768px) {
+  .sobre-cards .rightArrow {
+    right: 50px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
