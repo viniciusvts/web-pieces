@@ -1,4 +1,5 @@
 /*! @author Vinicius de Santana*/
+var urlBase = 'https://dnaformarketing.com.br/stant/'
 document.addEventListener('DOMContentLoaded', function(){
     menu = new MenuAndSub('menuandsub')
 })
@@ -37,7 +38,7 @@ class MenuAndSub {
         ]
         } */
         this.menuItens = []
-        fetch('https://dnaformarketing.com.br/stant/wp-json/wp/v2/funcionalidade/')
+        fetch(urlBase + 'wp-json/wp/v2/funcionalidade/')
         .then(res => res.json())
         .then(json => this.init(json))
     }
