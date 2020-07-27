@@ -94,3 +94,13 @@
 .dot.active{
     background-color: #ff4024;
 }
+#stant-produtividade .elementor-button {
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #FF4025;
+    font-weight: bold;
+}
+#stant-produtividade .elementor-button:hover {
+    color: #FFFFFF;
+    background-color: #002A53;
+}

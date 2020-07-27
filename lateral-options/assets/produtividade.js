@@ -1,6 +1,8 @@
 /*! Cria o componete e controla a mudança do conteúdo central */
+/** Inserir a url base do site aqui, muda quando em dev, homologação, produção */
+var urlBase = 'https://dnaformarketing.com.br/stant/'
 document.addEventListener('DOMContentLoaded', ()=>{
-    fetch('https://dnaformarketing.com.br/stant/wp-json/wp/v2/funcionalidade/')
+    fetch(urlBase + 'wp-json/wp/v2/funcionalidade/')
     .then(res => res.json())
     .then(json => initProdutividade(json))
 })
@@ -15,6 +17,7 @@ function initProdutividade (json) {
     let titleContent = document.getElementById('title-content')
     centerContent.setAttribute('src', allItens[0].acf.funcoes[0].imagem_funcao.url)
     titleContent.innerHTML = allItens[0].acf.descricao
+    setLinkTo(urlBase + 'funcionalidades/#' + allItens[0].slug)
     //adiciona o evento de click a todos
     //o evento não está em uma função separada pq perde a referência de allItens
     for (let i = 0; i < allItens.length; i++) {
@@ -27,6 +30,7 @@ function initProdutividade (json) {
                 if (allItens[j].div.innerText == this.innerText){
                     centerContent.setAttribute('src', allItens[j].acf.funcoes[0].imagem_funcao.url)
                     titleContent.innerHTML = allItens[j].acf.descricao
+                    setLinkTo(urlBase + 'funcionalidades/#' + allItens[j].slug)
                 }
             }
             //ativa a div do click
@@ -137,5 +141,9 @@ function updateDots(direction) {
             }
         }
     }
+}
+/** @author Vinicius de Santana @param {String} url */
+function setLinkTo (url) {
+    document.getElementById('funcionalidade-link').href = url
 }
 /*! /end Cria o componete e controla a mudança do conteúdo central*/
