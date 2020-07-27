@@ -24,6 +24,8 @@ class MenuAndSub {
         this.el = document.getElementById(idSelector)
         if (this.el == null) throw new TypeError('precisa de seletor')
         // inicializa as variáveis
+        /** coloca os ids nesta div para direcionar os links por hash */
+        this.anchors = document.getElementById('anchors')
         this.el.menu = this.el.querySelector('.menu')
         this.el.conteudo = this.el.querySelector('.conteudo')
         /** @type {
@@ -193,6 +195,16 @@ class MenuAndSub {
         for (const item of this.menuItens) {
             item.menu.classList.remove('active')
         }
+    }
+    
+    /** 
+     * @returns {HTMLElement}
+     * @param {String} id
+    */
+   createDivWithId (id) {
+        var divId = document.createElement('div')
+        divId.id = id
+        return divId
     }
 }
 
