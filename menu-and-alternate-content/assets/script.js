@@ -50,6 +50,8 @@ class MenuAndSub {
         for (const dt of data) {
             let menuItem = {}
             menuItem.menu = this.createMenuItem(dt)
+            //adiciona as informações a div
+            menuItem.data = dt
             // já monta o menu nesse loop
             this.el.menu.appendChild(menuItem.menu)
             menuItem.menu.sub = this.createSubmenuItens(dt)
@@ -60,6 +62,19 @@ class MenuAndSub {
                 this.setContent(menuItem.menu.sub)
             }
             this.menuItens.push(menuItem)
+            this.anchors.append(this.createDivWithId(dt.slug))
+            // escuta o evento de mudança de hash para habilitar o correspondente
+            //está aqui para não perder a referência a this
+            window.addEventListener('hashchange', () => {
+                var newHash = window.location.hash.substr(1)
+                for (const item of this.menuItens) {
+                    if (item.data.slug == newHash) {
+                        this.limpaMenu()
+                        item.menu.classList.add('active')
+                        this.setContent(item.menu.sub)
+                    }
+                }
+            })
         }
         //caso não tenha o hash ativa o primeiro
         if (!isHashValid) {
