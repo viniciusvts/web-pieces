@@ -161,7 +161,7 @@ class Carrossel {
         /** link para o linkedIn */
         var link = document.createElement('a')
         link.href = data.acf.linkedin
-        link.innerHTML = '<img src="./assets/img/linkedin.svg" alt="">'
+        link.innerHTML = '<img src="http://dnaformarketing.com.br/bimworks/wp-content/uploads/2020/07/linkedin.svg" alt="">'
         foot.appendChild(link)
         return foot
     }
