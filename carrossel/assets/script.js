@@ -1,4 +1,4 @@
-var equipeUrl = 'https://dnaformarketing.com.br/bimworks/wp-json/wp/v2/equipe?order=asc'
+var equipeUrl = 'https://bimworks.com.br/wp-json/wp/v2/equipe?order=asc'
 
 /**
  * inicia o carrosel com os dados da api
@@ -22,12 +22,6 @@ class Carrossel {
      * @author Vinicius de Santana
     */
     init(dados) {
-        /** Navegação para a esquerda */
-        this.left = this.leftArrow()
-        this.el.append(this.left)
-        /** Navegação para a direita */
-        this.right = this.rightArrow()
-        this.el.append(this.right)
         /** Contém os cards gerados */
         this.itens = []
         for (const dado of dados) {
@@ -35,6 +29,12 @@ class Carrossel {
             this.itens.push(newCard)
             this.el.append(newCard)
         }
+        /** Navegação para a esquerda */
+        this.left = this.leftArrow()
+        this.el.append(this.left)
+        /** Navegação para a direita */
+        this.right = this.rightArrow()
+        this.el.append(this.right)
     }
     
     /** 
@@ -75,7 +75,7 @@ class Carrossel {
         this.el.scrollLeft += this.itens[0].offsetWidth
         this.left.classList.remove('disabled')
         if (this.el.scrollLeft >= lastOffset){
-            this.right.classList.add('disabled')
+            this.cloneItensInRight()
         }
     }
 
@@ -84,11 +84,10 @@ class Carrossel {
      * @author Vinicius de Santana
      */
     toLeft() {
-        var firstOffset = this.itens[0].offsetWidth
         this.el.scrollLeft -= this.itens[0].offsetWidth
         this.right.classList.remove('disabled')
-        if (this.el.scrollLeft <= firstOffset){
-            this.left.classList.add('disabled')
+        if (this.el.scrollLeft <= 1){
+            this.cloneItensInLeft()
         }
     }
     
@@ -161,9 +160,38 @@ class Carrossel {
         /** link para o linkedIn */
         var link = document.createElement('a')
         link.href = data.acf.linkedin
-        link.innerHTML = '<img src="http://dnaformarketing.com.br/bimworks/wp-content/uploads/2020/07/linkedin.svg" alt="">'
+        link.innerHTML = '<img src="https://bimworks.com.br/wp-content/uploads/2020/07/linkedin.svg" alt="">'
         foot.appendChild(link)
         return foot
+    }
+
+    /** 
+     * clana os cards e os adiciona ao carrossel para dar o efeito de inifito
+     * @author Vinicius de Santana
+    */
+    cloneItensInRight(){
+        for (const item of this.itens) {
+            this.el.append(item.cloneNode(true))
+        }
+    }
+
+    /** 
+     * clana os cards e os adiciona ao carrossel para dar o efeito de inifito
+     * @author Vinicius de Santana
+    */
+    cloneItensInLeft(){
+        var firstchild = this.el.firstElementChild
+        /**valor do offset no momento inicial
+         * esse valor muda no elemento depois de criado novos elementos
+         */
+        var firstchildinitialOffset = firstchild.offsetLeft
+        for (const item of this.itens) {
+            this.el.insertBefore(item.cloneNode(true), firstchild)
+        }
+        this.el.classList.add('creatingCards')
+        this.el.scrollLeft = firstchild.offsetLeft - firstchildinitialOffset
+        this.el.classList.remove('creatingCards')
+        this.toLeft()
     }
 }
 document.addEventListener('DOMContentLoaded', () =>{

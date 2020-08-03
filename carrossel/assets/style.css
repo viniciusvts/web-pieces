@@ -10,6 +10,9 @@
     box-shadow: 10px -10px 20px 0px #EFEFEF;
   }
 }
+.sobre-cards.creatingCards {
+  scroll-behavior: unset !important;
+}
 .sobre-cards .sobre-card {
   border-right: 2px solid #F3F3F3;
   text-align: center;
@@ -21,6 +24,7 @@
   border: 1px solid #EFEFEF;
   border-radius: 34px;
   margin-bottom: 30px;
+  width: 100%;
 }
 .sobre-cards .sobre-card .head p.name {
   font-size: 20px;
