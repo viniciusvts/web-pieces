@@ -58,17 +58,19 @@ class MenuAndSub {
             // já monta o menu nesse loop
             this.el.menu.appendChild(menuItem.menu)
             menuItem.menu.sub = this.createSubmenuItens(dt)
+            this.menuItens.push(menuItem)
+            this.anchors.append(this.createDivWithId(dt.slug))
             // caso tenha hash e seja igual ao slug, ativa o menu e submenu
             if (window.location.hash.substr(1) == dt.slug) {
                 isHashValid = true
                 menuItem.menu.classList.add('active')
                 this.setContent(menuItem.menu.sub)
+                setTimeout(this.scrollPageToId,1000)
             }
-            this.menuItens.push(menuItem)
-            this.anchors.append(this.createDivWithId(dt.slug))
             // escuta o evento de mudança de hash para habilitar o correspondente
             //está aqui para não perder a referência a this
             window.addEventListener('hashchange', () => {
+                this.scrollPageToId()
                 var newHash = window.location.hash.substr(1)
                 for (const item of this.menuItens) {
                     if (item.data.slug == newHash) {
@@ -121,6 +123,7 @@ class MenuAndSub {
             that.limpaMenu()
             this.classList.add('active')
             that.setContent(this.sub)
+            window.location.hash = data.slug
         })
         return div
     }
@@ -205,6 +208,14 @@ class MenuAndSub {
         var divId = document.createElement('div')
         divId.id = id
         return divId
+    }
+    
+    /** 
+    */
+    scrollPageToId () {
+        var id = window.location.hash.substr(1)
+        var elem = document.getElementById(id)
+        window.scrollTo(0, elem.getBoundingClientRect().top)
     }
 }
 
