@@ -84,9 +84,9 @@ Mobile
 
 Para Dna de vendas foi construído um relógio regressivo para o curso de vendas.
 
-Está disponível em: [Inside Sales](https://insidesalesacademy.com.br/hotsite-imob-corretor/)
-
-Está disponível em: [Inside Sales](https://insidesalesacademy.com.br/hotsite-imob-gestor/)
+Está disponível em:
+- [Inside Sales](https://insidesalesacademy.com.br/hotsite-imob-corretor/)
+- [Inside Sales](https://insidesalesacademy.com.br/hotsite-imob-gestor/)
 
 Além de poder mudar de cor quando concluído, podem ser usados vários em uma página, e o tempo "linha de chegada também é setado no js
 
