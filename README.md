@@ -32,7 +32,7 @@ Mobile
 
 Para a empresa de software para obras Stant foi desenhado uma seção de opções, cada opção com uma imagem e conteúdo correspondente, no desktop essas opções são dispostas a esquerda e direita com o conteúdo sendo renderizado ao meio.
 
-Está disponível em: [Homologação DNA for Marketing](https://dnaformarketing.com.br/stant/)
+Está disponível em: [Stant Software de gestão de obras](https://www.stant.com.br/)
 
 A medida que o texto muda muda tambem o link do botão acima levando para uma página onde possui esses mesmos dados com [mais detalhes](#menu-and-submenu).
 
@@ -49,7 +49,7 @@ Mobile
 
 Para a empresa de software para obras Stant na [seção de opções laterais](#lateral-options) cada opção com sua imagem e conteúdo correspondente precisavam de uma página com todos os detalhes sendo exibidos.
 
-Está disponível em: [Homologação DNA for Marketing](https://dnaformarketing.com.br/stant/funcionalidades/)
+Está disponível em: [Stant Software de gestão de obras](https://www.stant.com.br/funcionalidades/)
 
 Não apenas isso como todas as funcionalidades estão na mesma página é necessário que de acordo com o hash esse conteúdo seja modificado
 
