@@ -99,3 +99,19 @@ countdown = new Countdown(div, finishDate)
 ScreenShot
 
 ![Watch Countdown](watch-countdown/screenshot.jpg)
+
+
+
+## Whats Button
+>18/11/2020
+
+Um botão de whatsapp flutuante para ser inserido no site
+
+Está disponível em:
+- [Espaço Aliança Salvador](https://www.espacoaliancasalvador.com.br/)
+
+Feito com svg e css, só copiar e colar, não é necessário upload de imagem
+
+ScreenShot
+
+![Whats Button](whats-button/screenshot.png)
